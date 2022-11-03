@@ -1,0 +1,22 @@
+﻿CHARACTERS = {
+	c:HUN = {
+		create_character = {
+			# Kossuth Lajos
+			first_name = Kossuth
+			last_name = Lajos
+			ig_leader = yes
+			birth_date = 1802.9.19
+			#dna = dna_emperor_ferdinand_01 TODO: DNA FOR KOSSUTH
+			interest_group = ig_petty_bourgeoisie
+			ideology = ideology_radical
+			traits = {
+				ambitious
+				reckless
+			}
+			on_created = {
+				set_variable = is_married
+			}
+		}
+	}
+}
+
