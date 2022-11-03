@@ -42,14 +42,13 @@
 			first_name = Dessewffy
 			last_name = Aurél
 			ig_leader = yes
-			birth_date = 1791.9.21
+			birth_date = 1808.7.27
 			#dna = dna_emperor_ferdinand_01 TODO: DNA FOR Dessewffy
-			interest_group = ig_aristocrats
+			interest_group = ig_landowners
 			ideology = ideology_royalist
 			traits = {
-				ambitious
 				cautious
-				experienced_political_operator
+				wounded # He did not have wounds in real life, but i needed a trait that affects his health negatively since he died young
 			}
 		}
 	}
