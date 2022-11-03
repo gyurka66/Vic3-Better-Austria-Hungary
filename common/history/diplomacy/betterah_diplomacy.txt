@@ -1,0 +1,8 @@
+DIPLOMACY = {
+	c:AUS = {
+        create_diplomatic_pact = {
+			country = c:HUN
+			type = personal_union
+		}
+	}
+}

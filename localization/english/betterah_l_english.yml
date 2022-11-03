@@ -1,0 +1,28 @@
+﻿l_english:
+ #austria events:
+ dual_monarchy.2.t:0 "Liberals take over in Hungary!"
+ dual_monarchy.2.d:0 "Liberal Interest Groups have taken control of the government in Hungary and they might be planning to limit the Kaiser's righteous rule in their country. Are we to interfere and restore direct rule from Wien?"
+ dual_monarchy.2.f:0 "When all men lift the horn of plenty\nin one happy equality,\nwhen all men have an equal station\nat the table of justice, and, see\through the windows of every house\nthen we can say, no more wandering,\nCanaan is here, let us rejoice!\nExcerpt from Poets of the XIX Century\nby Petőfi Sándor, 1847"
+ dual_monarchy.2.a:0 "We shall stop this thinly veiled attempt at secession, once and for all!"
+ dual_monarchy.2.b:0 "They promised they will be loyal to the crown, right?"
+ 
+ dual_monarchy.3.t:0 "April Laws enacted in Hungary!"
+ dual_monarchy.3.d:0 "A Hungarian revolution overthrew the governor in Pest and declared a constitutional monarchy. While they claim that they do not intend to separate from Austria these so called 'laws' are still an insult to the Kaiser himself."
+ dual_monarchy.3.f:0 "What the Hungarian nation wants.\nLet there be peace, liberty, and concord.\n\n    We demand the freedom of the press, the abolition of censorship.\n    Independent Hungarian government in Buda-Pest.\n    Annual national assembly in Pest.\n    Civil and religious equality before the law.\n    National army.\n    Universal and equal taxation,\n    The abolition of serfdom.\n    Juries and courts based on an equal legal representation.\n    A national bank.\n    The army must take an oath on the Constitution, send our soldiers home and take foreign soldiers away.\n    Setting free the political prisoners (amnesty for those who have opposed or criticized the government).\n    Union [with Transylvania].\n\nEquality, liberty, fraternity!"
+ dual_monarchy.3.a:0 "We shall stop this thinly veiled attempt at secession, once and for all!"
+ dual_monarchy.3.b:0 "They promised they will be loyal to the crown, right?"
+ 
+ #hungary events:
+ 
+ betterah_hungary.1.t:0 "The Hungarian Revolution"
+ betterah_hungary.1.d:0 "What started as a student protest lead by a handful of poets and writers has quickly spiralled out of control and now there is a popular uprising on the streets of Buda-Pest. They are demanding the surrender of the governorship. The news are quickly spreading around the country."
+ betterah_hungary.1.f:0 "    National Song\nArise Magyar, your country calls!\nNow or never, our time is here!\nShall we be slaves?Shall we be free?\nThese are the questions.Answer me!\n    Petőfi Sándor(1848)"
+ betterah_hungary.1.a:0 "Surrender to the revolutionaries and become a true constitutional monarchy."
+ betterah_hungary.1.b:0 "Send in the garrison against the crowd and prepare the army to wipe this movement off the face of the earth!"
+ 
+ # Austria Journal Entries:
+ je_dual_monarchy_reason:0 "The Kingdom of Hungary has been historically an unruly subject. Now it is time to rein them in and enact direct rule from Vienna before nationalism takes root in those lands."
+ je_dual_monarchy_goal:0 "Hungary has [JournalEntry.GetGoalProgressValue|0] integration progress. They will be annexed at [JournalEntry.GetGoalAddValue|0]"
+ je_hungary_resistance:0 "Our Integration into Austria"
+ je_hungary_resistance_reason:0 "The Habsburg empire is trying to assimilate us into their territories. We have only a few decades before our people forget the nationhood of Hungary. The time is here, now or never!"
+ je_hungary_resistance_goal:0 "The Hasburgs reached [JournalEntry.GetGoalProgressValue|0] integration progress. We will be annexed at [JournalEntry.GetGoalAddValue|0]"

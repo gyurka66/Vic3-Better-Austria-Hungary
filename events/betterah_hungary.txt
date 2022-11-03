@@ -1,0 +1,50 @@
+﻿namespace = betterah_hungary
+
+betterah_hungary.1 = { # on liberal revolution option to accept demands and enact April Laws
+	type = country_event
+
+	title = betterah_hungary.1.t
+	desc = betterah_hungary.1.d
+	flavor = betterah_hungary.1.f
+
+	event_image = {
+		video = "gfx/event_pictures/unspecific_ruler_speaking_to_people.bk2"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/leader_speaking_to_a_group_of_people"
+
+	duration = 3
+
+	trigger = {
+		# triggered by revolution start on_action
+		is_direct_subject_of = c:AUS  # we need to be subject to austria
+		NOT = {
+			is_diplomatic_play_enemy_of = c:AUS
+		}
+	}
+
+	option = { # accept the revolt and enact April Laws
+		name = betterah_hungary.1.a
+		default_option = yes
+		
+		play_as = scope:target # we switch to the revolt
+		scope:target = {
+			active_diplomatic_play = {
+				resolve_play_for = scope:target  # we make the revolt win the revolution
+			}
+		}
+		c:AUS = {
+			trigger_event = {
+				id = dual_monarchy.3  # Austria will get a chance to intervene
+				months = 5 # 5 months plus diplo play length to stabilize your country to do that before you fight
+			}
+		}
+	}
+	option = { # don't accept demands
+		name = betterah_hungary.1.b
+
+	}
+}

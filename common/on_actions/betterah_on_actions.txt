@@ -1,0 +1,11 @@
+﻿on_revolution_start = {
+    on_actions = {
+        betterah_rev_start_on_action
+    }
+}
+
+betterah_rev_start_on_action = {
+    events = {
+		betterah_hungary.1
+	}
+}
