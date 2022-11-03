@@ -34,6 +34,24 @@
 				experienced_political_operator
 			}
 		}
+		
+		#Batthyány will be spawned when Hungary Secedes
+		
+		create_character = { # idk, i don't know any other conservative politicians from this period
+			# Dessewffy Aurél
+			first_name = Dessewffy
+			last_name = Aurél
+			ig_leader = yes
+			birth_date = 1791.9.21
+			#dna = dna_emperor_ferdinand_01 TODO: DNA FOR Dessewffy
+			interest_group = ig_aristocrats
+			ideology = ideology_royalist
+			traits = {
+				ambitious
+				cautious
+				experienced_political_operator
+			}
+		}
 	}
 }
 
