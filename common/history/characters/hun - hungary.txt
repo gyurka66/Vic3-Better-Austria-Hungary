@@ -12,9 +12,26 @@
 			traits = {
 				ambitious
 				reckless
+				inspirational_orator
 			}
 			on_created = {
 				set_variable = is_married
+			}
+		}
+		
+		create_character = {
+			# Széchenyi István
+			first_name = Széchenyi
+			last_name = István
+			ig_leader = yes
+			birth_date = 1791.9.21
+			#dna = dna_emperor_ferdinand_01 TODO: DNA FOR Széchenyi
+			interest_group = ig_industrialists
+			ideology = ideology_reformer
+			traits = {
+				ambitious
+				cautious
+				experienced_political_operator
 			}
 		}
 	}
