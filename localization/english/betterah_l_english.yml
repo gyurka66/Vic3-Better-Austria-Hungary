@@ -26,3 +26,7 @@
  je_hungary_resistance:0 "Our Integration into Austria"
  je_hungary_resistance_reason:0 "The Habsburg empire is trying to assimilate us into their territories. We have only a few decades before our people forget the nationhood of Hungary. The time is here, now or never!"
  je_hungary_resistance_goal:0 "The Hasburgs reached [JournalEntry.GetGoalProgressValue|0] integration progress. We will be annexed at [JournalEntry.GetGoalAddValue|0]"
+ 
+ # Hungary decisions:
+ betterah_habsburg_dethronement_decisison:0 "Dethrone the Austrian monarch!"
+ betterah_habsburg_dethronement_decisison_desc:0 "While we are currently fighting for our independence, legally our head of state is still the Habsburg monarch. This cannot stand!"
