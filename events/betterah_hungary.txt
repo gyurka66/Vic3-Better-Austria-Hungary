@@ -75,35 +75,48 @@ betterah_hungary.2 = { # Austria wants us to remove our liberal igs from governm
 			is_diplomatic_play_enemy_of = c:AUS
 		}
 	}
-	
-	add_ruling_interest_group - Adds interest group to government
-	add_ruling_interest_group = yes/no
-	Supported Scopes: interest_group
 
 	option = { # accept the demand
 		name = betterah_hungary.2.a
 		default_option = yes
 		
-		set_ruling_interest_groups = {
-			random_interest_group = {  # get a random non-liberal interest group
-				limit = {
-					is_marginalized = no
-					leader = {
-						NOT = {
-							OR = {
-								has_ideology = ideology_republican_leader
-								has_ideology = ideology_radical
-								has_ideology = ideology_reformer
-								has_ideology = ideology_social_democrat
-								has_ideology = ideology_communist
-								has_ideology = ideology_vanguardist
-								has_ideology = ideology_anarchist
-							}
+		random_interest_group = {  # get a random non-liberal interest group
+			limit = {
+				is_marginal = no
+				leader = {
+					NOT = {
+						OR = {
+							has_ideology = ideology_republican_leader
+							has_ideology = ideology_radical
+							has_ideology = ideology_reformer
+							has_ideology = ideology_social_democrat
+							has_ideology = ideology_communist
+							has_ideology = ideology_vanguardist
+							has_ideology = ideology_anarchist
 						}
 					}
 				}
 			}
+			add_ruling_interest_group = yes #put them in govt
 		}
+		
+		every_interest_group = { # get every liberal IG
+			limit = {
+				leader = {
+					OR = {
+						has_ideology = ideology_republican_leader
+						has_ideology = ideology_radical
+						has_ideology = ideology_reformer
+						has_ideology = ideology_social_democrat
+						has_ideology = ideology_communist
+						has_ideology = ideology_vanguardist
+						has_ideology = ideology_anarchist
+					}
+				}
+			}
+			remove_ruling_interest_group = yes #kick them out
+		}
+		
 		add_modifier = {
 			name = forced_regime_change # this should hopefully stop hungary from switching the IGs back in
 			months = normal_modifier_time
