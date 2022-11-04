@@ -2,9 +2,6 @@
 	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
 
 	on_monthly_pulse = {
-		events = {
-			dual_monarchy.2  # trigger: if liberal in HUN govt
-		}
 		effect = {
 			if = {
 				limit = {
@@ -31,7 +28,7 @@
 			if = {
 				limit = {
 					c:HUN = {
-						relations:root <= -10
+						relations:root <= relations_threshold:poor
 					}
 				}
 				change_variable = {

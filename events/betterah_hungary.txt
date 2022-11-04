@@ -48,3 +48,84 @@ betterah_hungary.1 = { # on liberal revolution option to accept demands and enac
 
 	}
 }
+
+
+betterah_hungary.2 = { # Austria wants us to remove our liberal igs from government
+	type = country_event
+
+	title = betterah_hungary.2.t
+	desc = betterah_hungary.2.d
+	flavor = betterah_hungary.2.f
+
+	event_image = {
+		video = "gfx/event_pictures/unspecific_ruler_speaking_to_people.bk2"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/leader_speaking_to_a_group_of_people"
+
+	duration = 3
+
+	trigger = {
+		# triggered by betterah_control_hungarian_government_decision
+		is_direct_subject_of = c:AUS  # we need to be subject to austria
+		NOT = {
+			is_diplomatic_play_enemy_of = c:AUS
+		}
+	}
+	
+	add_ruling_interest_group - Adds interest group to government
+	add_ruling_interest_group = yes/no
+	Supported Scopes: interest_group
+
+	option = { # accept the demand
+		name = betterah_hungary.2.a
+		default_option = yes
+		
+		set_ruling_interest_groups = {
+			random_interest_group = {  # get a random non-liberal interest group
+				limit = {
+					is_marginalized = no
+					leader = {
+						NOT = {
+							OR = {
+								has_ideology = ideology_republican_leader
+								has_ideology = ideology_radical
+								has_ideology = ideology_reformer
+								has_ideology = ideology_social_democrat
+								has_ideology = ideology_communist
+								has_ideology = ideology_vanguardist
+								has_ideology = ideology_anarchist
+							}
+						}
+					}
+				}
+			}
+		}
+		add_modifier = {
+			name = forced_regime_change # this should hopefully stop hungary from switching the IGs back in
+			months = normal_modifier_time
+		}
+		
+		#add_ruling_interest_group - Adds interest group to government
+		#add_ruling_interest_group = yes/no
+		#Supported Scopes: interest_group
+		
+		add_radicals = { # hungarians are angry we gave in
+			value = large_radicals
+			culture = cu:hungarian
+		}
+	}
+	option = { # don't accept demands and prepare for war
+		name = betterah_hungary.2.b
+		c:AUS = {
+			remove_modifier = modifier_hungary_curtailed # remove the modifier from austria, since they are not curtailing us anymore
+			trigger_event = {
+				id = dual_monarchy.2 # they will have a chance to declare a diplo play against us
+				days = 0
+			}
+		}
+	}
+}
