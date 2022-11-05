@@ -40,3 +40,6 @@
  # Austria decisions:
  betterah_control_hungarian_government_decision:0 "Remove Hungarian Liberals from power"
  betterah_control_hungarian_government_decision_desc:0 "A group of liberals have gotten into the government in Hungary, this severely limits the progress of their integration into the empire. But we can send them a demand to stand down"
+ 
+ betterah_make_ruler_resign_decision:0 "Remove Kaiser from Power" # for some reason [ROOT.GetCountry.GetRuler.GetFullName]
+ betterah_make_ruler_resign_decision_desc:0 "The Kaiser has an unfortunate illness of the mind. This makes him a liability to the country. A liability we cannot afford."

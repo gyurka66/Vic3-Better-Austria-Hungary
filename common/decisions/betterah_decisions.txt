@@ -83,3 +83,42 @@ betterah_control_hungarian_government_decision = {  # remove the liberals from t
 		}		
 	}
 }
+
+betterah_make_ruler_resign_decision = { # Austria historically removed Ferdinand V from power from the inside at 1484.
+	is_shown = {
+		exists = c:AUS
+		this = c:AUS
+		ruler = {
+			has_trait = psychological_affliction
+		}
+	}
+
+	possible = {
+		this = c:AUS
+		authority > 0
+	}
+	
+	when_taken = {
+	
+		ruler = {
+			place_character_in_void = 12 # banish ruler to the shadow realm for 12 months then he gets deleted, prolly.
+		}
+		
+		add_modifier = {
+			name = government_conflict # -25% authority
+			months = normal_modifier_time
+		}
+	}
+
+	ai_chance = {
+		base = 0
+		modifier = {
+			trigger = { authority > 300 }
+			add = 5
+		}
+		modifier = {
+			trigger = { is_at_war = yes }
+			add = 5
+		}				
+	}
+}
