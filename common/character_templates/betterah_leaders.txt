@@ -1,12 +1,13 @@
-betterah_petofi_character_template = {
-    first_name = Petőfi
-    last_name = Sándor
+﻿betterah_petofi_character_template = {
+    first_name = Petofi
+    last_name = Sandor
     culture = cu:hungarian
     female = no
     religion = protestant
     ideology = ideology_moderate
     interest_group = ig_trade_unions
     birth_date = 1823.1.1
+	dna = betterah_dna_petofi
     traits = {
         charismatic
         reckless
@@ -27,7 +28,7 @@ betterah_petofi_character_template = {
 }
 
 betterah_batthyany_character_template = {
-    first_name = Batthyány
+    first_name = Batthyany
     last_name = Lajos
     culture = cu:hungarian
     female = no
@@ -43,7 +44,7 @@ betterah_batthyany_character_template = {
         country_trigger = {
             exists = c:HUN
             this = c:HUN
-			is_direct_subject_of = c:AUS  # he resigned when austria attacked hungary
+		is_direct_subject_of = c:AUS  # he resigned when austria attacked hungary
         }
         interest_group_trigger = {
             is_interest_group_type = ig_landowners
