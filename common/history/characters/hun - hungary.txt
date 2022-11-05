@@ -6,7 +6,7 @@
 			last_name = Lajos
 			ig_leader = yes
 			birth_date = 1802.9.19
-			#dna = dna_emperor_ferdinand_01 TODO: DNA FOR KOSSUTH
+			dna = betterah_dna_kossuth
 			interest_group = ig_petty_bourgeoisie
 			ideology = ideology_radical
 			traits = {
@@ -21,11 +21,11 @@
 		
 		create_character = {
 			# Széchenyi István
-			first_name = Széchenyi
-			last_name = István
+			first_name = Szechenyi
+			last_name = Istvan
 			ig_leader = yes
 			birth_date = 1791.9.21
-			#dna = dna_emperor_ferdinand_01 TODO: DNA FOR Széchenyi
+			dna = betterah_dna_szechenyi
 			interest_group = ig_industrialists
 			ideology = ideology_reformer
 			traits = {
@@ -38,9 +38,9 @@
 		#Batthyány will be spawned when Hungary Secedes
 		
 		create_character = { # idk, i don't know any other conservative politicians from this period
-			# Dessewffy Aurél
+			# Dessewffy Aurel
 			first_name = Dessewffy
-			last_name = Aurél
+			last_name = Aurel
 			ig_leader = yes
 			birth_date = 1808.7.27
 			#dna = dna_emperor_ferdinand_01 TODO: DNA FOR Dessewffy
