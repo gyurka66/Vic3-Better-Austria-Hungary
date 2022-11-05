@@ -1,7 +1,7 @@
 ﻿l_english:
  #austria events:
- dual_monarchy.2.t:0 "Liberals take over in Hungary!"
- dual_monarchy.2.d:0 "Liberal Interest Groups have taken control of the government in Hungary and they might be planning to limit the Kaiser's righteous rule in their country. Are we to interfere and restore direct rule from Wien?"
+ dual_monarchy.2.t:0 "Hungary refuses our demands!"
+ dual_monarchy.2.d:0 "Liberal Interest Groups have taken control of the government in Hungary and they are unwilling to obey the direct order to stand down from the Kaiser himself. Are we to interfere and restore direct rule from Wien?"
  dual_monarchy.2.f:0 "When all men lift the horn of plenty\nin one happy equality,\nwhen all men have an equal station\nat the table of justice, and, see\through the windows of every house\nthen we can say, no more wandering,\nCanaan is here, let us rejoice!\nExcerpt from Poets of the XIX Century\nby Petőfi Sándor, 1847"
  dual_monarchy.2.a:0 "We shall stop this thinly veiled attempt at secession, once and for all!"
  dual_monarchy.2.b:0 "They promised they will be loyal to the crown, right?"
@@ -20,9 +20,26 @@
  betterah_hungary.1.a:0 "Surrender to the revolutionaries and become a true constitutional monarchy."
  betterah_hungary.1.b:0 "Send in the garrison against the crowd and prepare the army to wipe this movement off the face of the earth!"
  
+ betterah_hungary.2.t:0 "Austria sends demands"
+ betterah_hungary.2.d:0 "This morning, we received an envoy from Vienna. The King himself has demanded our current government to be dissolved, due to it's liberal nature. If we comply we will end up with a less extreme faction appointed by Austria. If we defy their demands we can expect war."
+ betterah_hungary.2.f:0 "While some argue that the country is not yet ready to openly defy it's King, many more voices support taking a hardline stance against Vienna to protect Hungary's rights."
+ betterah_hungary.2.a:0 "There is nothing to be done, the current government must resign."
+ betterah_hungary.2.b:0 "Let's see if Austria will back up their words with actions. Now or Never!"
+ 
  # Austria Journal Entries:
  je_dual_monarchy_reason:0 "The Kingdom of Hungary has been historically an unruly subject. Now it is time to rein them in and enact direct rule from Vienna before nationalism takes root in those lands."
  je_dual_monarchy_goal:0 "Hungary has [JournalEntry.GetGoalProgressValue|0] integration progress. They will be annexed at [JournalEntry.GetGoalAddValue|0]"
  je_hungary_resistance:0 "Our Integration into Austria"
  je_hungary_resistance_reason:0 "The Habsburg empire is trying to assimilate us into their territories. We have only a few decades before our people forget the nationhood of Hungary. The time is here, now or never!"
  je_hungary_resistance_goal:0 "The Hasburgs reached [JournalEntry.GetGoalProgressValue|0] integration progress. We will be annexed at [JournalEntry.GetGoalAddValue|0]"
+ 
+ # Hungary decisions:
+ betterah_habsburg_dethronement_decision:0 "Dethrone the Austrian monarch!"
+ betterah_habsburg_dethronement_decision_desc:0 "While we are currently fighting for our independence, legally our head of state is still the Habsburg monarch. This cannot stand!"
+ 
+ # Austria decisions:
+ betterah_control_hungarian_government_decision:0 "Remove Hungarian Liberals from power"
+ betterah_control_hungarian_government_decision_desc:0 "A group of liberals have gotten into the government in Hungary, this severely limits the progress of their integration into the empire. But we can send them a demand to stand down"
+ 
+ betterah_make_ruler_resign_decision:0 "Remove Kaiser from Power" # for some reason [ROOT.GetCountry.GetRuler.GetFullName]
+ betterah_make_ruler_resign_decision_desc:0 "The Kaiser has an unfortunate illness of the mind. This makes him a liability to the country. A liability we cannot afford."

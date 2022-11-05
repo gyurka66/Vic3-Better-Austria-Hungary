@@ -82,22 +82,7 @@ dual_monarchy.2 = {
 	type = country_event
 
 	title = dual_monarchy.2.t
-	desc = {
-		first_valid = {
-			triggered_desc = {
-				desc = dual_monarchy.2.d
-				trigger = {
-					NOT = { has_variable = dual_monarchy_fail }
-				}
-			}
-			triggered_desc = {
-				desc = dual_monarchy.2.d2
-				trigger = {
-					has_variable = dual_monarchy_fail
-				}
-			}
-		}
-	}
+	desc = dual_monarchy.2.d
 	flavor = dual_monarchy.1.f
 
 	event_image = {
@@ -111,23 +96,7 @@ dual_monarchy.2 = {
 
 	duration = 3
 
-	trigger = {
-		c:HUN = {
-			any_interest_group = {
-				is_in_government = yes
-				leader = {
-					OR = {
-						has_ideology = ideology_republican_leader
-						has_ideology = ideology_radical
-						has_ideology = ideology_reformer
-						has_ideology = ideology_social_democrat
-						has_ideology = ideology_communist
-						has_ideology = ideology_vanguardist
-						has_ideology = ideology_anarchist
-					}
-				}
-			}
-		}
+	trigger = { # triggered from betterah_hungary.2
 		NOT = {
 			is_diplomatic_play_enemy_of = c:HUN
 		}
