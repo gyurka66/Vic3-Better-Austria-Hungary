@@ -16,7 +16,7 @@
 	}
 
 	goal_add_value = {
-		add = 240
+		add = 480
 	}
 
 	progressbar = yes

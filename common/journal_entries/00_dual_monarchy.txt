@@ -114,6 +114,15 @@
 					add = -3
 				}
 			}
+			if = {  # Austria owns cental hungary directly
+				limit = {
+					owns_entire_state_region = s:STATE_CENTRAL_HUNGARY
+				}
+				change_variable = {
+					name = ah_hungary_integration_var
+					add = 2
+				}
+			}
 		}
 	}
 
@@ -130,8 +139,8 @@
 	}
 
 	fail = {
-		c:HUN = {
-			NOT = { is_direct_subject_of = ROOT }
+		NOT = {
+			country_or_subject_owns_entire_state_region = s:STATE_CENTRAL_HUNGARY
 		}
 	}
 
@@ -140,7 +149,7 @@
 	}
 
 	goal_add_value = {
-		add = 240
+		add = 480
 	}
 
 	progressbar = yes
