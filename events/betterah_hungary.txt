@@ -142,3 +142,163 @@ betterah_hungary.2 = { # Austria wants us to remove our liberal igs from governm
 		}
 	}
 }
+
+#################### Minority Events
+betterah_hungary.11 = { # If Croats are angry they will join austria
+	type = country_event
+
+	title = betterah_hungary.11.t
+	desc = betterah_hungary.11.d
+	flavor = betterah_hungary.11.f
+
+	event_image = {
+		video = "gfx/event_pictures/unspecific_ruler_speaking_to_people.bk2"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/leader_speaking_to_a_group_of_people"
+
+	duration = 3
+
+	trigger = { # triggered by the hungarian revolution on action
+		is_direct_subject_of = c:AUS  # we need to be subject to austria
+		OR = { # Hungary needs to have some angry croat territory
+			any_scope_state = {
+				AND = {
+					OR = {
+						state_region = s:STATE_DALMATIA
+						state_region = s:STATE_CROATIA
+						state_region = s:STATE_SLAVONIA
+					}
+					turmoil > 0.2
+				}
+			}
+		}
+	}
+
+	option = { # deny independence, croats join the austrians but we get a wargoal against them
+		name = betterah_hungary.11.a
+		default_option = yes
+
+		every_scope_state = {
+			limit = {
+				AND = {
+					OR = {
+						state_region = s:STATE_DALMATIA
+						state_region = s:STATE_CROATIA
+						state_region = s:STATE_SLAVONIA
+					}
+					turmoil > 0.2
+				}
+			}
+			set_state_owner = c:AUS
+			scope:diplomatic_play = {
+				add_war_goal = {
+					holder = c:HUN
+					type = return_state
+					target_state = PREV
+				}
+			}
+		}
+		
+	}
+	option = { # grant independence to Croatia, they join the war on our side
+		name = betterah_hungary.11.b
+
+		every_scope_state = { # Release or give territory to croatia
+			limit = {
+				OR = {
+					state_region = s:STATE_DALMATIA
+					state_region = s:STATE_CROATIA
+					state_region = s:STATE_SLAVONIA
+				}
+			}
+			if = {
+				limit = {
+					exists = c:CRO
+				}
+				set_state_owner = c:CRO
+			}
+			else = {
+				create_country = {
+					tag = CRO
+					origin = c:HUN
+					state = THIS
+				}
+			}
+		}
+
+		scope:diplomatic_play = {  # Add Croatia on Hungary's side.
+				if = {
+					limit = {
+						initiator_is = c:HUN
+					}
+					add_initiator_backers = {c:CRO}
+				}
+				else = {
+					add_target_backers = {c:CRO}
+				}
+			}
+	}
+
+	option = { # Make Croatia a dominion, they join the war on our side
+		name = betterah_hungary.11.c
+		trigger = {
+			NOT = {
+				any_scope_state = {
+					AND = {
+						OR = {
+							state_region = s:STATE_DALMATIA
+							state_region = s:STATE_CROATIA
+							state_region = s:STATE_SLAVONIA
+						}
+						turmoil > 0.4
+					}
+				}
+			}
+		}
+
+		every_scope_state = { # Release or give territory to croatia
+			limit = {
+				OR = {
+					state_region = s:STATE_DALMATIA
+					state_region = s:STATE_CROATIA
+					state_region = s:STATE_SLAVONIA
+				}
+			}
+			if = {
+				limit = {
+					exists = c:CRO
+				}
+				set_state_owner = c:CRO
+			}
+			else = {
+				create_country = {
+					tag = CRO
+					origin = c:HUN
+					state = THIS
+				}
+			}
+		}
+
+		#make croatia dominion
+		create_diplomatic_pact = {
+			country = c:CRO
+			type = dominion
+		}
+
+		scope:diplomatic_play = {  # Add Croatia on Hungary's side.
+			if = {
+				limit = {
+					initiator_is = c:HUN
+				}
+				add_initiator_backers = {c:CRO}
+			}
+			else = {
+				add_target_backers = {c:CRO}
+			}
+		}
+	}
+}

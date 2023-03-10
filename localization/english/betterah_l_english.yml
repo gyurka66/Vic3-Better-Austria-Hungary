@@ -25,12 +25,19 @@
  betterah_hungary.2.f:0 "While some argue that the country is not yet ready to openly defy it's King, many more voices support taking a hardline stance against Vienna to protect Hungary's rights."
  betterah_hungary.2.a:0 "There is nothing to be done, the current government must resign."
  betterah_hungary.2.b:0 "Let's see if Austria will back up their words with actions. Now or Never!"
+ #hungary events: minority events:
+ betterah_hungary.11.t:0 "The Croatian Renewal"
+ betterah_hungary.11.d:0 "The Croatian Sabor has sent their demands of self-determination. If we are to deny there is a high chance that they might cooperate with the Austrians against us."
+ betterah_hungary.11.f:0 "All peoples must have their culture and language protected!"
+ betterah_hungary.11.a:0 "Croatia is rightfully part of Hungary, this is out of the question."
+ betterah_hungary.11.b:0 "We need the support of all nationalities if we are to defeat the Habsburgs. Croatia shall be free!"
+ betterah_hungary.11.c:0 "We can offer them more autonomy, but we won't let them fully separate."
  
  # Austria Journal Entries:
- je_dual_monarchy_reason:0 "The Kingdom of Hungary has been historically an unruly subject. Now it is time to rein them in and enact direct rule from Vienna before nationalism takes root in those lands."
+ je_dual_monarchy_reason:0 "The Kingdom of Hungary has been historically an unruly subject. Now it is time to rein them in and enact direct rule from Vienna before nationalism takes root in those lands.\n The following factors can impact integration: \n #P Royalists in Hungarian Government(3) \n Royalists in Austrian Government(2) \n Austria controls Budapest directly(2) \n Hungarian is not discriminated(2) \n Cordial relations between Austria and Hungary(1)#! \n\n #N Poor relations between Austria and Hungary(-1) \n Liberals in Hungarian government(-1) \n Hungary is democratic (-3)#!"
  je_dual_monarchy_goal:0 "Hungary has [JournalEntry.GetGoalProgressValue|0] integration progress. They will be annexed at [JournalEntry.GetGoalAddValue|0]"
  je_hungary_resistance:0 "Our Integration into Austria"
- je_hungary_resistance_reason:0 "The Habsburg empire is trying to assimilate us into their territories. We have only a few decades before our people forget the nationhood of Hungary. The time is here, now or never!"
+ je_hungary_resistance_reason:0 "The Habsburg empire is trying to assimilate us into their territories. We have only a few decades before our people forget the nationhood of Hungary. The time is here, now or never!\n The following factors can impact integration: \n #N Royalists in Hungarian Government(3) \n Royalists in Austrian Government(2) \n Austria controls Budapest directly(2) \n Hungarian is not discriminated(2) \n Cordial relations between Austria and Hungary(1)#! \n\n #P Poor relations between Austria and Hungary(-1) \n Liberals in Hungarian government(-1) \n Hungary is democratic (-3)#!"
  je_hungary_resistance_goal:0 "The Hasburgs reached [JournalEntry.GetGoalProgressValue|0] integration progress. We will be annexed at [JournalEntry.GetGoalAddValue|0]"
  
  # Hungary decisions:
