@@ -116,7 +116,7 @@
 			}
 			if = {  # Austria owns cental hungary directly
 				limit = {
-					owns_entire_state_region = s:STATE_CENTRAL_HUNGARY
+					owns_entire_state_region = STATE_CENTRAL_HUNGARY
 				}
 				change_variable = {
 					name = ah_hungary_integration_var
@@ -140,7 +140,7 @@
 
 	fail = {
 		NOT = {
-			country_or_subject_owns_entire_state_region = s:STATE_CENTRAL_HUNGARY
+			country_or_subject_owns_entire_state_region = STATE_CENTRAL_HUNGARY
 		}
 	}
 
