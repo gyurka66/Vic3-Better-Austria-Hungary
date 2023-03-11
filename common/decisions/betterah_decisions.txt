@@ -122,3 +122,72 @@ betterah_make_ruler_resign_decision = { # Austria historically removed Ferdinand
 		}				
 	}
 }
+
+betterah_loose_austro_hungarian_compromise = { # Historical path. If austria controls hungary directly and there is dissent, they can release hungary as puppet and form austria hungary
+	is_shown = {
+		exists = c:AUS
+		this = c:AUS
+		NOT = {
+			exists = c:HUN
+		}
+		owns_entire_state_region = STATE_CENTRAL_HUNGARY
+	}
+
+	possible = {
+		this = c:AUS
+		NOT = {is_diplomatic_play_committed_participant = yes}
+	}
+	
+	when_taken = {
+		# lose prestige
+		add_modifier = {
+			name = dual_monarchy_compromise
+			months = very_long_modifier_time
+		}
+		#get 25% more authority
+		add_modifier = {
+			name = modifier_hungary_cooperates
+			months = very_long_modifier_time
+		}
+		create_country = {
+			tag = HUN
+			origin = THIS
+			state = s:STATE_CENTRAL_HUNGARY.region_state:AUS
+		}
+		every_scope_state = {
+			limit = {
+				state_region = {
+					is_homeland = cu:hungarian
+				}
+			}
+			set_state_owner = c:HUN
+		}
+		#we need to make sure we can do personal union, otherwise do puppet
+		if = {
+			limit = {
+				AND = {
+					has_law = law_type:law_monarchy
+					c:HUN = {has_law = law_type:law_monarchy}
+				}
+			}
+			create_diplomatic_pact = {
+				country = c:HUN
+				type = personal_union
+			}
+		}
+		else = {
+			create_diplomatic_pact = {
+				country = c:HUN
+				type = puppet
+			}
+		}
+	}
+
+	ai_chance = {
+		base = 0
+		modifier = {
+			trigger = { s:STATE_CENTRAL_HUNGARY.region_state:AUS = {turmoil > 0.3} }
+			add = 5
+		}		
+	}
+}
