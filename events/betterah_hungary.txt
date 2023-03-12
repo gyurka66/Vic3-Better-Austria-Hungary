@@ -240,10 +240,15 @@ betterah_hungary.11 = { # If Croats are angry they will join austria
 				else = {
 					add_target_backers = {c:CRO}
 				}
-			}
+				add_war_goal = {
+					holder = c:AUS
+					type = annex_country
+					target_country = c:CRO
+				}
+		}
 	}
 
-	option = { # Make Croatia a dominion, they join the war on our side
+	option = { # Make Croatia a dominion, they join the war on our side but only if they don't hate us too much
 		name = betterah_hungary.11.c
 		trigger = {
 			NOT = {
@@ -298,6 +303,11 @@ betterah_hungary.11 = { # If Croats are angry they will join austria
 			}
 			else = {
 				add_target_backers = {c:CRO}
+			}
+			add_war_goal = {
+				holder = c:AUS
+				type = annex_country
+				target_country = c:CRO
 			}
 		}
 	}
