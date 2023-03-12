@@ -31,7 +31,9 @@ dual_monarchy.1 = {
 
 	option = { # accept compromise
 		name = dual_monarchy.1.b
-		default_option = yes
+		trigger = { # We can only make austria-hungary if hungarians are equal
+			NOT = { cu:hungarian = {culture_is_discriminated_in = ROOT} }
+		}
 
 		custom_tooltip = austria_hungary_tt
 		add_primary_culture = cu:hungarian
@@ -55,6 +57,7 @@ dual_monarchy.1 = {
 	}
 	option = { #reject compromise
 		name = dual_monarchy.1.c
+		default_option = yes
 
 		add_radicals = {
 			value = very_large_radicals
