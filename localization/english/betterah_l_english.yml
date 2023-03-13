@@ -32,13 +32,35 @@
  betterah_hungary.11.a:0 "Croatia is rightfully part of Hungary, this is out of the question."
  betterah_hungary.11.b:0 "We need the support of all nationalities if we are to defeat the Habsburgs. Croatia shall be free!"
  betterah_hungary.11.c:0 "We can offer them more autonomy, but we won't let them fully separate."
+
+ betterah_hungary.12.t:0 "Union with Erdély, with some caveats"
+ betterah_hungary.12.d:0 "Our Transylvanian brothers decided to return to the Kingdom of Hungary, however they want to retain much of their autonomy that they had under Habsburg rule. How should we proceed?"
+ betterah_hungary.12.f:0 "In Transylvania the Romanian population has majority, who are not keen on union. The parliament of Transylvania is probably trying to avoid an uprising with this decision."
+ betterah_hungary.12.a:0 "Hungarians need to stick together!"
+ betterah_hungary.12.b:0 "We will liberate Erdély fully!"
+
+ betterah_hungary.13.t:0 "Union with Erdély"
+ betterah_hungary.13.d:0 "Our long separation with our brothers and sisters in Transylvania has finally ended when the Transylvanian parliament decided to return their state to the Kingdom of Hungary"
+ betterah_hungary.13.f:0 "Hopefully our vlach subjects will take it well..."
+ betterah_hungary.13.a:0 "Hooray!"
+
+ #Transylvania events
+
+ betterah_transylvania.1.t:0 "Union with Hungary"
+ betterah_transylvania.1.d:0 "The people of mainland Hungary are taking a stand against the Austrian opressors. An emergency session of the Transylvanian parliament convened to decide what we should do. Most members support fully rejoining Hungary but the Romanian peasantry is afraid of Hungarian opression, we might be able to placate them by only joining partially"
+ betterah_transylvania.1.f:0 "Hopefully our vlach subjects will take it well..."
+ betterah_transylvania.1.a:0 "We shall join our brothers! Now or Never!"
+ betterah_transylvania.1.b:0 "We shall join our brothers... with our autonomy intact"
+ betterah_transylvania.1.c:0 "We are better off on Austria's side. We are not traitors..."
  
  # Austria Journal Entries:
  je_dual_monarchy_reason:0 "The Kingdom of Hungary has been historically an unruly subject. Now it is time to rein them in and enact direct rule from Vienna before nationalism takes root in those lands.\n The following factors can impact integration: \n #P Royalists in Hungarian Government(3) \n Royalists in Austrian Government(2) \n Austria controls Budapest directly(2) \n Cordial relations between Austria and Hungary(1)#! \n\n #N Poor relations between Austria and Hungary(-1) \n Liberals in Hungarian government(-1) \n Hungarian is discriminated in Austria(-2) \n Hungary is democratic (-3)#!"
  je_dual_monarchy_goal:0 "Hungary has [JournalEntry.GetGoalProgressValue|0] integration progress. They will be annexed at [JournalEntry.GetGoalAddValue|0]"
  je_hungary_resistance:0 "Our Integration into Austria"
- je_hungary_resistance_reason:0 "The Habsburg empire is trying to assimilate us into their territories. We have only a few decades before our people forget the nationhood of Hungary. The time is here, now or never!\n The following factors can impact integration: \n #N Royalists in Hungarian Government(3) \n Royalists in Austrian Government(2) \n Austria controls Budapest directly(2) \n Cordial relations between Austria and Hungary(1)#! \n\n #P Poor relations between Austria and Hungary(-1) \n Liberals in Hungarian government(-1) \n Hungarian is discriminated in Austria(-2) \n Hungary is democratic (-3)#!"
+ je_hungary_resistance_reason:0 "The Habsburg Empire is trying to assimilate us into their territories. We have only a few decades before our people forget the nationhood of Hungary. The time is here, now or never!\n The following factors can impact integration: \n #N Royalists in Hungarian Government(3) \n Royalists in Austrian Government(2) \n Austria controls Budapest directly(2) \n Cordial relations between Austria and Hungary(1)#! \n\n #P Poor relations between Austria and Hungary(-1) \n Liberals in Hungarian government(-1) \n Hungarian is discriminated in Austria(-2) \n Hungary is democratic (-3)#!"
  je_hungary_resistance_goal:0 "The Hasburgs reached [JournalEntry.GetGoalProgressValue|0] integration progress. We will be annexed at [JournalEntry.GetGoalAddValue|0]"
+ je_transylvania_resistance_reason:0 "The Habsburg Empire is trying to assimilate Hungary into their territories. If they succeed in doing so we might end up next on their list.\n The following factors can impact integration: \n #N Royalists in Hungarian Government(3) \n Royalists in Austrian Government(2) \n Austria controls Budapest directly(2) \n Cordial relations between Austria and Hungary(1)#! \n\n #P Poor relations between Austria and Hungary(-1) \n Liberals in Hungarian government(-1) \n Hungarian is discriminated in Austria(-2) \n Hungary is democratic (-3)#!"
+ je_transylvania_resistance_goal:0 "The Hasburgs reached [JournalEntry.GetGoalProgressValue|0] integration progress. Hungary will be annexed at [JournalEntry.GetGoalAddValue|0]"
  
  # Hungary decisions:
  betterah_habsburg_dethronement_decision:0 "Dethrone the Austrian monarch!"

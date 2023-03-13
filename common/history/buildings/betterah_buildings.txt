@@ -270,7 +270,7 @@
 		}
 	}
 	s:STATE_SOUTHERN_TRANSYLVANIA={
-		region_state:HUN={
+		region_state:TRS={
 			create_building={
 				building="building_barracks"
 				level=5
@@ -304,7 +304,7 @@
 		}
 	}
 	s:STATE_NORTHERN_TRANSYLVANIA={
-		region_state:HUN={
+		region_state:TRS={
 			create_building={
 				building="building_government_administration"
 				level=2

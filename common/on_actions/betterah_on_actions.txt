@@ -38,7 +38,16 @@ betterah_hungarian_revolution_on_action = {
                     }
                 }
             }
+            trigger_event = betterah_hungary.11
+            if = {
+                limit = {
+                    exists = c:TRS
+                    c:TRS = {is_direct_subject_of = c:AUS}
+                }
+                c:TRS = {
+                    trigger_event = betterah_transylvania.1 #Transylvania can join hungary at revolution start
+                }
+            }
         }
-        trigger_event = betterah_hungary.11
     }
 }

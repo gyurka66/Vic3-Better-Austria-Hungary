@@ -164,6 +164,8 @@ betterah_hungary.11 = { # If Croats are angry they will join austria
 
 	trigger = { # triggered by the hungarian revolution on action
 		is_direct_subject_of = c:AUS  # we need to be subject to austria
+		exists = c:HUN
+		this = c:HUN
 		OR = { # Hungary needs to have some angry croat territory
 			any_scope_state = {
 				AND = {
@@ -310,5 +312,96 @@ betterah_hungary.11 = { # If Croats are angry they will join austria
 				target_country = c:CRO
 			}
 		}
+	}
+}
+
+betterah_hungary.12 = { # Transylvania offers to join as puppet
+	type = country_event
+
+	title = betterah_hungary.12.t
+	desc = betterah_hungary.12.d
+	flavor = betterah_hungary.12.f
+
+	event_image = {
+		video = "gfx/event_pictures/unspecific_ruler_speaking_to_people.bk2"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/leader_speaking_to_a_group_of_people"
+
+	duration = 3
+
+	trigger = { # triggered by the transylvanian event 1
+	}
+
+	option = { # Accept proposal
+		name = betterah_hungary.12.a
+		default_option = yes
+
+		create_diplomatic_pact = {
+			country = c:TRS
+			type = puppet
+		}
+
+		scope:diplomatic_play = {  # Add Transylvania on Hungary's side.
+			if = {
+				limit = {
+					initiator_is = c:HUN
+				}
+				add_initiator_backers = {c:TRS}
+			}
+			else = {
+				add_target_backers = {c:TRS}
+			}
+			add_war_goal = {
+				holder = c:AUS
+				type = annex_country
+				target_country = c:TRS
+			}
+		}
+	}
+
+	option = { # deny proposal, but we get wargoal against TRS
+		name = betterah_hungary.12.b
+		c:TRS = {
+			every_scope_state = {
+				scope:diplomatic_play = {
+					add_war_goal = {
+						holder = c:HUN
+						type = conquer_state
+						target_state = PREV
+					}
+				}
+			}
+		}
+	}
+}
+
+betterah_hungary.13 = { # Notification about transylvania joining us
+	type = country_event
+
+	title = betterah_hungary.13.t
+	desc = betterah_hungary.13.d
+	flavor = betterah_hungary.13.f
+
+	event_image = {
+		video = "gfx/event_pictures/unspecific_ruler_speaking_to_people.bk2"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/leader_speaking_to_a_group_of_people"
+
+	duration = 3
+
+	trigger = { # triggered by the transylvanian event 1
+	}
+
+	option = { # Hooray
+		name = betterah_hungary.13.a
+		default_option = yes
 	}
 }

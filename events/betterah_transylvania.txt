@@ -1,0 +1,64 @@
+﻿namespace = betterah_transylvania
+
+betterah_transylvania.1 = { #Hungary asks us to join them
+	type = country_event
+
+	title = betterah_transylvania.1.t
+	desc = betterah_transylvania.1.d
+	flavor = betterah_transylvania.1.f
+
+	event_image = {
+		video = "gfx/event_pictures/unspecific_ruler_speaking_to_people.bk2"
+	}
+
+	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_opened_soundeffect = "event:/SFX/Events/unspecific/leader_speaking_to_a_group_of_people"
+
+	duration = 3
+
+	trigger = { # triggered by the hungarian revolution on action
+		is_direct_subject_of = c:AUS  # we need to be subject to austria
+        exists = c:TRS
+        this = c:TRS
+	}
+
+	option = { # Join hungarians completely
+		name = betterah_transylvania.1.a
+		default_option = yes
+
+		add_radicals = { #romanians are pissed
+			value = very_large_radicals
+			culture = cu:romanian
+		}
+        c:HUN = {
+            annex = ROOT
+            trigger_event = betterah_hungary.13 #notify hungary about joining
+        }
+	}
+	option = { # Offer hungary to join as puppet
+		name = betterah_transylvania.1.b
+        c:HUN = {
+            trigger_event = betterah_hungary.12
+        }
+	}
+
+	option = { # Join Austria's side
+		name = betterah_transylvania.1.c
+
+        add_radicals = { #hungarians are pissed
+			value = very_large_radicals
+			culture = cu:hungarian
+		}
+        every_scope_state = { # Hungary gets wargoals against us!
+            scope:diplomatic_play = {
+                add_war_goal = {
+                    holder = c:HUN
+                    type = conquer_state
+                    target_state = PREV
+                }
+            }
+        }
+	}
+}
