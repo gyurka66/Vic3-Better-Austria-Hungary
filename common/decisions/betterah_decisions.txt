@@ -95,6 +95,7 @@ betterah_make_ruler_resign_decision = { # Austria historically removed Ferdinand
 
 	possible = {
 		this = c:AUS
+		heir = {age > 18} # only possible if heir is adult
 		authority > 0
 	}
 	
