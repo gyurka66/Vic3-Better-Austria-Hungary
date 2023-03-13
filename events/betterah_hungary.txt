@@ -24,6 +24,21 @@ betterah_hungary.1 = { # on liberal revolution option to accept demands and enac
 		NOT = {
 			is_diplomatic_play_enemy_of = c:AUS
 		}
+		scope:target = { # make sure we only do this if the revolution is progressive
+			any_interest_group = {
+				leader = { 
+					OR = {
+						has_ideology = ideology_republican_leader
+						has_ideology = ideology_radical
+						has_ideology = ideology_reformer
+						has_ideology = ideology_social_democrat
+						has_ideology = ideology_communist
+						has_ideology = ideology_vanguardist
+						has_ideology = ideology_anarchist
+					}
+				}
+			}
+		}
 	}
 
 	option = { # accept the revolt and enact April Laws
@@ -37,6 +52,10 @@ betterah_hungary.1 = { # on liberal revolution option to accept demands and enac
 			}
 		}
 		c:AUS = {
+			create_diplomatic_pact = { #We have to make Hungary a puppet again cause the revolution frees it by default
+				country = c:HUN
+				type = personal_union
+			}
 			trigger_event = {
 				id = dual_monarchy.3  # Austria will get a chance to intervene
 				months = 5 # 5 months plus diplo play length to stabilize your country to do that before you fight
