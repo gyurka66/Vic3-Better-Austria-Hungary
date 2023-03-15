@@ -31,6 +31,7 @@ betterah_habsburg_dethronement_decision = {  # remove the habsburg monarch from 
 betterah_control_hungarian_government_decision = {  # remove the liberals from the hungarian government
 	is_shown = {
 		exists = c:AUS
+		exists = c:HUN
 		this = c:AUS
 		c:HUN = {
 			is_direct_subject_of = c:AUS
@@ -124,7 +125,7 @@ betterah_make_ruler_resign_decision = { # Austria historically removed Ferdinand
 	}
 }
 
-betterah_loose_austro_hungarian_compromise = { # Historical path. If austria controls hungary directly and there is dissent, they can release hungary as puppet and form austria hungary
+betterah_loose_austro_hungarian_compromise_decision = { # Historical path. If austria controls hungary directly and there is dissent, they can release hungary as puppet and form austria hungary
 	is_shown = {
 		exists = c:AUS
 		this = c:AUS
@@ -156,34 +157,36 @@ betterah_loose_austro_hungarian_compromise = { # Historical path. If austria con
 			origin = THIS
 			state = s:STATE_CENTRAL_HUNGARY.region_state:AUS
 		}
-		every_scope_state = {
-			limit = {
-				state_region = {
-					is_homeland = cu:hungarian
+		hidden_effect = {
+			every_scope_state = {
+				limit = {
+					state_region = {
+						is_homeland = cu:hungarian
+					}
+				}
+				set_state_owner = c:HUN
+			}
+			c:HUN = {
+				add_primary_culture = cu:south_german #hungary doesn't hate us anymore either
+			}
+			#we need to make sure we can do personal union, otherwise do puppet
+			if = {
+				limit = {
+					AND = {
+						has_law = law_type:law_monarchy
+						c:HUN = {has_law = law_type:law_monarchy}
+					}
+				}
+				create_diplomatic_pact = {
+					country = c:HUN
+					type = personal_union
 				}
 			}
-			set_state_owner = c:HUN
-		}
-		c:HUN = {
-			add_primary_culture = cu:south_german #hungary doesn't hate us anymore either
-		}
-		#we need to make sure we can do personal union, otherwise do puppet
-		if = {
-			limit = {
-				AND = {
-					has_law = law_type:law_monarchy
-					c:HUN = {has_law = law_type:law_monarchy}
+			else = {
+				create_diplomatic_pact = {
+					country = c:HUN
+					type = puppet
 				}
-			}
-			create_diplomatic_pact = {
-				country = c:HUN
-				type = personal_union
-			}
-		}
-		else = {
-			create_diplomatic_pact = {
-				country = c:HUN
-				type = puppet
 			}
 		}
 	}
@@ -206,7 +209,7 @@ betterah_loose_austro_hungarian_compromise = { # Historical path. If austria con
 }
 
 ### TRANSYLVANIA DESICISONs
-betterah_transylvania_accept_romanian = {  # transylvania makes romanian a primary culture
+betterah_transylvania_accept_romanian_decision = {  # transylvania makes romanian a primary culture
 	is_shown = {
 		exists = c:TRS
 		this = c:TRS
