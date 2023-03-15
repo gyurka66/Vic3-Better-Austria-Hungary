@@ -36,12 +36,18 @@ betterah_transylvania.1 = { #Hungary asks us to join them
             annex = ROOT
             trigger_event = betterah_hungary.13 #notify hungary about joining
         }
+		ai_chance = {
+			base = 10
+		}
 	}
 	option = { # Offer hungary to join as puppet
 		name = betterah_transylvania.1.b
         c:HUN = {
             trigger_event = betterah_hungary.12
         }
+		ai_chance = {
+			base = 5
+		}
 	}
 
 	option = { # Join Austria's side
@@ -60,5 +66,13 @@ betterah_transylvania.1 = { #Hungary asks us to join them
                 }
             }
         }
+
+		ai_chance = {
+			base = 0
+			modifier = {
+				trigger = {c:HUN.army_size < c:AUS.army_size }
+				add = 2
+			}
+		}
 	}
 }

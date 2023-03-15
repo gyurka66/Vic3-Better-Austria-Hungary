@@ -61,10 +61,15 @@ betterah_hungary.1 = { # on liberal revolution option to accept demands and enac
 				months = 5 # 5 months plus diplo play length to stabilize your country to do that before you fight
 			}
 		}
+		ai_chance = {
+			base = 5
+		}
 	}
 	option = { # don't accept demands
 		name = betterah_hungary.1.b
-
+		ai_chance = {
+			base = 1
+		}
 	}
 }
 
@@ -149,6 +154,10 @@ betterah_hungary.2 = { # Austria wants us to remove our liberal igs from governm
 			value = large_radicals
 			culture = cu:hungarian
 		}
+
+		ai_chance = {
+			base = 2
+		}
 	}
 	option = { # don't accept demands and prepare for war
 		name = betterah_hungary.2.b
@@ -157,6 +166,13 @@ betterah_hungary.2 = { # Austria wants us to remove our liberal igs from governm
 			trigger_event = {
 				id = dual_monarchy.2 # they will have a chance to declare a diplo play against us
 				days = 0
+			}
+		}
+		ai_chance = {
+			base = 0
+			modifier = {
+				trigger = { army_size < c:AUS.army_size }
+				add = 2
 			}
 		}
 	}
@@ -223,7 +239,10 @@ betterah_hungary.11 = { # If Croats are angry they will join austria
 				}
 			}
 		}
-		
+
+		ai_chance = {
+			base = 2
+		}
 	}
 	option = { # grant independence to Croatia, they join the war on our side
 		name = betterah_hungary.11.b
@@ -266,6 +285,14 @@ betterah_hungary.11 = { # If Croats are angry they will join austria
 					type = annex_country
 					target_country = c:CRO
 				}
+		}
+
+		ai_chance = {
+			base = 1
+			modifier = {
+				trigger = { army_size < c:AUS.army_size }
+				add = 2
+			}
 		}
 	}
 
@@ -331,6 +358,10 @@ betterah_hungary.11 = { # If Croats are angry they will join austria
 				target_country = c:CRO
 			}
 		}
+
+		ai_chance = {
+			base = 6 # if they can they probably want to do this
+		}
 	}
 }
 
@@ -380,6 +411,9 @@ betterah_hungary.12 = { # Transylvania offers to join as puppet
 				target_country = c:TRS
 			}
 		}
+		ai_chance = {
+			base = 6
+		}
 	}
 
 	option = { # deny proposal, but we get wargoal against TRS
@@ -393,6 +427,14 @@ betterah_hungary.12 = { # Transylvania offers to join as puppet
 						target_state = PREV
 					}
 				}
+			}
+		}
+
+		ai_chance = {
+			base = 0
+			modifier = {
+				trigger = { army_size > c:AUS.army_size }
+				add = 3
 			}
 		}
 	}
