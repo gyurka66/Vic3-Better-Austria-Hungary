@@ -38,7 +38,7 @@
 			set_interest_group_name = ig_catholic_church 
 		}
 		add_journal_entry = {
-			type = je_transylvanian_resistance
+			type = je_transylvania_resistance
 		}
 	}
 }
