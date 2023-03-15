@@ -145,6 +145,7 @@ betterah_loose_austro_hungarian_compromise = { # Historical path. If austria con
 			name = dual_monarchy_compromise
 			months = very_long_modifier_time
 		}
+		add_primary_culture = cu:hungarian #We don't hate hungarians anymore
 		#get 25% more authority
 		add_modifier = {
 			name = modifier_hungary_cooperates
@@ -162,6 +163,9 @@ betterah_loose_austro_hungarian_compromise = { # Historical path. If austria con
 				}
 			}
 			set_state_owner = c:HUN
+		}
+		c:HUN = {
+			add_primary_culture = cu:south_german #hungary doesn't hate us anymore either
 		}
 		#we need to make sure we can do personal union, otherwise do puppet
 		if = {
@@ -188,7 +192,53 @@ betterah_loose_austro_hungarian_compromise = { # Historical path. If austria con
 		base = 0
 		modifier = {
 			trigger = { s:STATE_CENTRAL_HUNGARY.region_state:AUS = {turmoil > 0.3} }
-			add = 5
-		}		
+			add = 1
+		}
+		modifier = {
+			trigger = { s:STATE_CENTRAL_HUNGARY.region_state:AUS = {turmoil > 0.5} }
+			add = 1
+		}
+		modifier = {
+			trigger = { s:STATE_CENTRAL_HUNGARY.region_state:AUS = {turmoil > 0.7} }
+			add = 1
+		}
+	}
+}
+
+### TRANSYLVANIA DESICISONs
+betterah_transylvania_accept_romanian = {  # transylvania makes romanian a primary culture
+	is_shown = {
+		exists = c:TRS
+		this = c:TRS
+	}
+
+	possible = {
+		this = c:TRS
+		NOT = { cu:romanian = {culture_is_discriminated_in = ROOT} }
+	}
+	
+	when_taken = {
+		add_primary_culture = cu:romanian
+		add_loyalists = {
+			value = 0.2
+			culture = cu:romanian
+		}
+		add_radicals = {
+			value = 0.2
+			culture = cu:hungarian
+			pop_type = aristocrats
+		}
+		add_radicals = {
+			value = 0.2
+			culture = cu:hungarian
+		}
+	}
+
+	ai_chance = {
+		base = 2
+		modifier = {
+			trigger = { radical_fraction = {value > 0.5} }
+			add = 3
+		}
 	}
 }
