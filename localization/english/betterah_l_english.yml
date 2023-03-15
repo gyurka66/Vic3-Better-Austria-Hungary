@@ -1,5 +1,9 @@
 ﻿l_english:
  #austria events:
+ dual_monarchy.1.t2:0 "The Subjugation of Hungary" #these are used if hungarian is not accepted while hungary is integrated
+ dual_monarchy.1.d2:0 "We have finally dealt with the pesky separatists of Hungary, we shall now annex them and make them our direct subjects. One Emperor, One Country."
+ dual_monarchy.1.f2:0 "Austriae est imperare orbi universo - All the world is subject to Austria"
+
  dual_monarchy.2.t:0 "Hungary refuses our demands!"
  dual_monarchy.2.d:0 "Liberal Interest Groups have taken control of the government in Hungary and they are unwilling to obey the direct order to stand down from the Kaiser himself. Are we to interfere and restore direct rule from Wien?"
  dual_monarchy.2.f:0 "When all men lift the horn of plenty\nin one happy equality,\nwhen all men have an equal station\nat the table of justice, and, see\through the windows of every house\nthen we can say, no more wandering,\nCanaan is here, let us rejoice!\nExcerpt from Poets of the XIX Century\nby Petőfi Sándor, 1847"
@@ -17,8 +21,8 @@
  betterah_hungary.1.t:0 "The Hungarian Revolution"
  betterah_hungary.1.d:0 "What started as a student protest lead by a handful of poets and writers has quickly spiralled out of control and now there is a popular uprising on the streets of Buda-Pest. They are demanding the surrender of the governorship. The news are quickly spreading around the country."
  betterah_hungary.1.f:0 "    National Song\nArise Magyar, your country calls!\nNow or never, our time is here!\nShall we be slaves?Shall we be free?\nThese are the questions.Answer me!\n    Petőfi Sándor(1848)"
- betterah_hungary.1.a:0 "Surrender to the revolutionaries and become a true constitutional monarchy."
- betterah_hungary.1.b:0 "Send in the garrison against the crowd and prepare the army to wipe this movement off the face of the earth!"
+ betterah_hungary.1.a:0 "Surrender to the revolutionaries and become a true constitutional nation."
+ betterah_hungary.1.b:0 "Send in the garrison against the crowd and prepare the army to wipe this movement off the face of the Earth!"
  
  betterah_hungary.2.t:0 "Austria sends demands"
  betterah_hungary.2.d:0 "This morning, we received an envoy from Vienna. The King himself has demanded our current government to be dissolved, due to it's liberal nature. If we comply we will end up with a less extreme faction appointed by Austria. If we defy their demands we can expect war."
@@ -72,3 +76,9 @@
  
  betterah_make_ruler_resign_decision:0 "Remove Kaiser from Power" # for some reason [ROOT.GetCountry.GetRuler.GetFullName]
  betterah_make_ruler_resign_decision_desc:0 "The Kaiser has an unfortunate illness of the mind. This makes him a liability to the country. A liability we cannot afford."
+
+ betterah_loose_austro_hungarian_compromise_decision:0 "Form a loose Austria-Hungary"
+ betterah_loose_austro_hungarian_compromise_decision_desc:0 "Unfortunately quelling the unrest of Hungarians seems unfeastible, We might still salvage the situation by creating a dual-monarchy where Hungary is somewhat autonomous."
+ 
+ betterah_transylvania_accept_romanian_decision:0 "Equality for the Romanians"
+ betterah_transylvania_accept_romanian_decision_desc:0 "Most of the population of Transylvania is made up of Romanians, who are still less represented than our Hungarian subjects, Let's change that."
