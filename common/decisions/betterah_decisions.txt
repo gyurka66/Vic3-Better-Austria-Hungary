@@ -1,31 +1,5 @@
 ﻿# Hungary decisions:
-betterah_habsburg_dethronement_decision = {  # remove the habsburg monarch from the hungarian throne
-	is_shown = {
-		exists = c:HUN
-		this = c:HUN
-		is_direct_subject_of = c:AUS
-		has_law = law_type:law_monarchy
-	}
 
-	possible = {
-		this = c:HUN
-		is_subject_type = subject_type_personal_union
-		is_diplomatic_play_enemy_of = c:AUS
-	}
-	
-	when_taken = {
-		change_subject_type = subject_type_protectorate
-		activate_law = law_type:law_parliamentary_republic
-		add_radicals = {
-			value = medium_radicals
-			pop_type = aristocrats
-		}
-	}
-
-	ai_chance = {
-		base = 10	
-	}
-}
 
 # Austria decisions:
 betterah_control_hungarian_government_decision = {  # remove the liberals from the hungarian government
