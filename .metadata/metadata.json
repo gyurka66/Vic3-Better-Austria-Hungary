@@ -1,7 +1,7 @@
 {
   "name" : "Better Austria-Hungary",
   "id" : "betterah",
-  "version" : "1.0",
+  "version" : "1.0.1",
   "supported_game_version" : "1.2.4",
   "short_description" : "Better Events and Journal Entries for Austria-Hungary",
   "tags" : [],
