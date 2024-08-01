@@ -48,7 +48,7 @@
 			ideology = ideology_royalist
 			traits = {
 				cautious
-				wounded # He did not have wounds in real life, but i needed a trait that affects his health negatively since he died young
+				sickly
 			}
 		}
 	}

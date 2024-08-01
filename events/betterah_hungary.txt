@@ -52,7 +52,7 @@ betterah_hungary.1 = { # on liberal revolution option to accept demands and enac
 			}
 		}
 		c:AUS = {
-			create_diplomatic_pact = { #We have to make Hungary a puppet again cause the revolution frees it by default
+			create_diplomatic_pact = { #We have to make Hungary a subject again cause the revolution frees it by default
 				country = c:HUN
 				type = personal_union
 			}
