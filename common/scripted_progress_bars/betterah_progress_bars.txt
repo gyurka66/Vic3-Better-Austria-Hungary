@@ -1,0 +1,11 @@
+﻿betterah_hungary_liberalisation_progress_bar = {
+    name = "betterah_hungary_liberalisation_progress_bar_name"
+ 	desc = "betterah_hungary_liberalisation_progress_bar_hungary_desc"
+ 	second_desc = "betterah_hungary_liberalisation_progress_bar_austria_desc"
+
+ 	double_sided_gold = yes
+
+ 	start_value = 0
+ 	min_value = -0.5
+ 	max_value = 0.5
+}

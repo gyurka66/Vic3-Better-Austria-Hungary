@@ -4,9 +4,6 @@
 			set_state_owner = c:TRS
 			set_state_type = incorporated
 		}
-		
-		add_homeland = hungarian
-		add_homeland = romanian
 	}
 
     s:STATE_NORTHERN_TRANSYLVANIA = {
@@ -14,9 +11,6 @@
 			set_state_owner = c:TRS
 			set_state_type = incorporated
 		}
-		
-		add_homeland = hungarian
-		add_homeland = romanian		
 	}
 
     s:STATE_WEST_SLOVAKIA = {
@@ -24,54 +18,36 @@
 			set_state_owner = c:HUN
 			set_state_type = incorporated
 		}
-		
-		add_homeland = slovak
-		add_homeland = hungarian
 	}	
 	s:STATE_EAST_SLOVAKIA = {
 		region_state:AUS = {
 			set_state_owner = c:HUN
 			set_state_type = incorporated
 		}
-		
-		add_homeland = slovak
-		add_homeland = hungarian
 	}
 	s:STATE_CROATIA = {
 		region_state:AUS = {
 			set_state_owner = c:HUN
 			set_state_type = incorporated
-		}
-		
-		add_homeland = croat
-		add_homeland = serb		
+		}	
 	}
 	s:STATE_SLAVONIA = {
 		region_state:AUS = {
 			set_state_owner = c:HUN
 			set_state_type = incorporated
-		}
-		
-		add_homeland = croat
-		add_homeland = serb		
+		}	
 	}	
 	s:STATE_BEKES = {
 		region_state:AUS = {
 			set_state_owner = c:HUN
 			set_state_type = incorporated
 		}
-		
-		add_homeland = hungarian
-		add_homeland = romanian
 	}
 	s:STATE_TRANSDANUBIA = {
 		region_state:AUS = {
 			set_state_owner = c:HUN
 			set_state_type = incorporated
 		}
-		
-		add_homeland = hungarian
-		add_homeland = south_german
 	}
 
     s:STATE_CENTRAL_HUNGARY = {
@@ -79,18 +55,12 @@
 			set_state_owner = c:HUN
 			set_state_type = incorporated
 		}
-		
-		add_homeland = hungarian
 	}
     s:STATE_DELVIDEK = {
 		region_state:AUS = {
 			set_state_owner = c:HUN
 			set_state_type = incorporated
 		}
-		
-		add_homeland = hungarian
-		add_homeland = serb
-		add_claim = c:SER
 	}
 
     s:STATE_BANAT = {
@@ -98,9 +68,5 @@
 			set_state_owner = c:HUN
 			set_state_type = incorporated
 		}
-		
-		add_homeland = hungarian
-		add_homeland = romanian
-		add_homeland = serb
 	}
 }

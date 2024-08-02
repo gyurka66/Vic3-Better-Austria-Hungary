@@ -58,14 +58,18 @@
  betterah_transylvania.1.c:0 "We are better off on Austria's side. We are not traitors..."
  
  # Austria Journal Entries:
- je_dual_monarchy_reason:0 "The Kingdom of Hungary has been historically an unruly subject. Now it is time to rein them in and enact direct rule from Vienna before nationalism takes root in those lands.\n The following factors can impact integration: \n #P Royalists in Hungarian Government(3) \n Royalists in Austrian Government(2) \n Austria controls Budapest directly(2) \n Cordial relations between Austria and Hungary(1)#! \n\n #N Poor relations between Austria and Hungary(-1) \n Liberals in Hungarian government(-1) \n Hungarian is discriminated in Austria(-2) \n Hungary is democratic (-3)#!"
+ je_dual_monarchy_reason:0 "The Kingdom of Hungary has been historically an unruly subject. Now it is time to rein them in and enact direct rule from Vienna before nationalism takes root in those lands.\n The following factors impact $concept_liberty_desire$: \n #P Royalists in Hungarian Government(-0.15) \n Royalists in Austrian Government(-0.1) \n Austria controls Budapest directly(-0.1) #! \n\n #N Liberals in Hungarian government(0.05) \n Hungarian is discriminated in Austria(0.1) \n Hungary is democratic (0.15)#!"
  je_dual_monarchy_goal:0 "Hungary has [JournalEntry.GetGoalProgressValue|0] integration progress. They will be annexed at [JournalEntry.GetGoalAddValue|0]"
  je_hungary_resistance:0 "Our Integration into Austria"
- je_hungary_resistance_reason:0 "The Habsburg Empire is trying to assimilate us into their territories. We have only a few decades before our people forget the nationhood of Hungary. The time is here, now or never!\n The following factors can impact integration: \n #N Royalists in Hungarian Government(3) \n Royalists in Austrian Government(2) \n Austria controls Budapest directly(2) \n Cordial relations between Austria and Hungary(1)#! \n\n #P Poor relations between Austria and Hungary(-1) \n Liberals in Hungarian government(-1) \n Hungarian is discriminated in Austria(-2) \n Hungary is democratic (-3)#!"
+ je_hungary_resistance_reason:0 "The Habsburg Empire is trying to assimilate us into their territories. We have only a few decades before our people forget the nationhood of Hungary. The time is here, now or never!\n The following factors impact $concept_liberty_desire$: \n #N Royalists in Hungarian Government(-0.15) \n Royalists in Austrian Government(-0.1) \n Austria controls Budapest directly(-0.1) #! \n\n #P Liberals in Hungarian government(0.05) \n Hungarian is discriminated in Austria(0.1) \n Hungary is democratic (0.15)#!"
  je_hungary_resistance_goal:0 "The Hasburgs reached [JournalEntry.GetGoalProgressValue|0] integration progress. We will be annexed at [JournalEntry.GetGoalAddValue|0]"
- je_transylvania_resistance_reason:0 "The Habsburg Empire is trying to assimilate Hungary into their territories. If they succeed in doing so we might end up next on their list.\n The following factors can impact integration: \n #N Royalists in Hungarian Government(3) \n Royalists in Austrian Government(2) \n Austria controls Budapest directly(2) \n Cordial relations between Austria and Hungary(1)#! \n\n #P Poor relations between Austria and Hungary(-1) \n Liberals in Hungarian government(-1) \n Hungarian is discriminated in Austria(-2) \n Hungary is democratic (-3)#!"
+ je_transylvania_resistance_reason:0 "The Habsburg Empire is trying to assimilate Hungary into their territories. If they succeed in doing so we might end up next on their list.\n The following factors can impact integration: \n #N Royalists in Hungarian Government(-0.15) \n Royalists in Austrian Government(-0.1) \n Austria controls Budapest directly(-0.1) #! \n\n #P Liberals in Hungarian government(0.05) \n Hungarian is discriminated in Austria(0.1) \n Hungary is democratic (0.15)#!"
  je_transylvania_resistance_goal:0 "The Hasburgs reached [JournalEntry.GetGoalProgressValue|0] integration progress. Hungary will be annexed at [JournalEntry.GetGoalAddValue|0]"
- 
+# Scripted Hungary LIberalisation bar in Journal Entries
+ betterah_hungary_liberalisation_progress_bar_name:0 "Current Change in $concept_liberty_desire$ due to Liberalisation"
+ betterah_hungary_liberalisation_progress_bar_hungary_desc:0 "Autonomy"
+ betterah_hungary_liberalisation_progress_bar_austria_desc:0 "Dependence"
+
  # Hungary decisions:
  betterah_habsburg_dethronement_decision:0 "Dethrone the Austrian monarch!"
  betterah_habsburg_dethronement_decision_desc:0 "While we are currently fighting for our independence, legally our head of state is still the Habsburg monarch. This cannot stand!"
@@ -82,3 +86,31 @@
  
  betterah_transylvania_accept_romanian_decision:0 "Equality for the Romanians"
  betterah_transylvania_accept_romanian_decision_desc:0 "Most of the population of Transylvania is made up of Romanians, who are still less represented than our Hungarian subjects, Let's change that."
+
+ #liberty desire weekly change
+ betterah_hungary_liberalisation_ld:0 "Liberalisation of Hungary, check Journal for details."
+
+ # Subject type personal union locs, (direct copy from vanilla)
+
+ betterah_loose_personal_union:0 "Personal Union"
+ betterah_loose_personal_union_action_name:0 "[concept_personal_union]"
+ betterah_loose_personal_union_action_propose_name:0 "Make into [concept_personal_union]"
+ betterah_loose_personal_union_action_break_name:0 "Grant Independence"
+ betterah_loose_personal_union_action_ask_to_break_name:0 "Demand Independence"
+ betterah_loose_personal_union_desc: "Establishes a [concept_personal_union] [concept_subject_type] relationship between two [Concept('concept_country', '$concept_countries$')]."
+ betterah_loose_personal_union_pact_desc:0 "[SCOPE.GetRootScope.GetDiplomaticPact.GetSecondCountry.GetName] is in a [concept_personal_union] under [SCOPE.GetRootScope.GetDiplomaticPact.GetFirstCountry.GetName]."
+ betterah_loose_personal_union_action_notification_name:0 "Demand for Union"
+ betterah_loose_personal_union_action_notification_desc:0 "[INITIATOR_COUNTRY.GetName] demands that we submit to them and form a [concept_personal_union]."
+ betterah_loose_personal_union_action_notification_break_name:0 "Independence Granted"
+ betterah_loose_personal_union_action_notification_break_desc:0 "[INITIATOR_COUNTRY.GetName] have ended our [concept_personal_union]. We are independent once again."
+ betterah_loose_personal_union_proposal_notification_break_name:0 "Demand for Independence"
+ betterah_loose_personal_union_proposal_notification_break_desc:0 "[INITIATOR_COUNTRY.GetName] are demanding that we end our [concept_personal_union] with them."
+ betterah_loose_personal_union_proposal_notification_break_effects_desc:0 "If we accept, they will become fully independent."
+ betterah_loose_personal_union_proposal_break_accepted_name:0 "Independence Granted"
+ betterah_loose_personal_union_proposal_break_accepted_desc:0 "[TARGET_COUNTRY.GetName] accepted the demand to end our [concept_personal_union]. We are independent once again."
+ betterah_loose_personal_union_proposal_break_declined_name:0 "Independence Refused"
+ betterah_loose_personal_union_proposal_break_declined_desc:0 "[TARGET_COUNTRY.GetName] refused the demand to end our [concept_personal_union]."
+ betterah_loose_personal_union_proposal_third_party_break_accepted_name:0 "Independence Granted"
+ betterah_loose_personal_union_proposal_third_party_break_accepted_desc:0 "[TARGET_COUNTRY.GetName] ended their [concept_personal_union] with [INITIATOR_COUNTRY.GetName], granting them full independence."
+ betterah_loose_personal_union_proposal_third_party_break_declined_name:0 "Independence Refused"
+ betterah_loose_personal_union_proposal_third_party_break_declined_desc:0 "[TARGET_COUNTRY.GetName] refused to end their [concept_personal_union] with [INITIATOR_COUNTRY.GetName]."

@@ -1,25 +1,19 @@
 ﻿je_hungary_resistance = {
 	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
 
+	group = je_group_historical_content
+
 	complete = {
 			NOT = { is_direct_subject_of = c:AUS }
 	}
 
 	fail = {
-		scope:journal_entry = {
-			is_goal_complete = yes
+		NOT = {
+			exists = c:HUN
 		}
 	}
 
-	current_value = {
-		value = c:AUS.var:ah_hungary_integration_var
-	}
-
-	goal_add_value = {
-		add = 480
-	}
-
-	progressbar = yes
+	scripted_progress_bar = betterah_hungary_liberalisation_progress_bar
 
 	weight = 100
 	should_be_pinned_by_default = yes

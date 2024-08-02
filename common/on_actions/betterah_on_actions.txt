@@ -21,24 +21,20 @@ betterah_hungarian_revolution_on_action = {
         if = {
             limit = {
                 exists = c:HUN
-                ROOT = c:HUN
-                is_direct_subject_of = c:AUS
+                c:HUN = { is_direct_subject_of = c:AUS }
                 OR = {
                     AND = {
-                        scope:diplomatic_play = {
-                            initiator = c:HUN
-                            target = c:AUS
-                        }
+                        scope:initiator = c:HUN
+                        scope:target = c:AUS
                     }
                     AND = {
-                        scope:diplomatic_play = {
-                            initiator = c:AUS
-                            target = c:HUN
-                        }
+                        scope:initiator = c:AUS
+                        scope:target = c:HUN
                     }
                 }
             }
-            trigger_event = betterah_hungary.11
+            save_scope_as = diplomatic_play
+            c:HUN = { trigger_event = betterah_hungary.11 }
             if = {
                 limit = {
                     exists = c:TRS

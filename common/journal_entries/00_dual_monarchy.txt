@@ -1,8 +1,14 @@
 ﻿je_dual_monarchy = {
 	icon = "gfx/interface/icons/event_icons/event_portrait.dds"
 
+	group = je_group_historical_content
+
 	on_monthly_pulse = {
 		effect = {
+			set_variable = { # This variable will get added to the weekly liberty desire of Hungary
+				name = ah_hungary_integration_var
+				value = 0
+			}
 			if = {
 				limit = {
 					cu:hungarian = {
@@ -11,29 +17,7 @@
 				}
 				change_variable = {
 					name = ah_hungary_integration_var
-					add = -2
-				}
-			}
-			if = {
-				limit = {
-					c:HUN = {
-						relations:root >= relations_threshold:cordial
-					}
-				}
-				change_variable = {
-					name = ah_hungary_integration_var
-					add = 1
-				}
-			}
-			if = {
-				limit = {
-					c:HUN = {
-						relations:root <= relations_threshold:poor
-					}
-				}
-				change_variable = {
-					name = ah_hungary_integration_var
-					add = -1
+					add = 0.1
 				}
 			}
 			if = {  # liberals in the országgyűlés
@@ -43,13 +27,13 @@
 							is_in_government = yes
 							leader = {
 								OR = {
-									has_ideology = ideology_republican_leader
-									has_ideology = ideology_radical
-									has_ideology = ideology_reformer
-									has_ideology = ideology_social_democrat
-									has_ideology = ideology_communist
-									has_ideology = ideology_vanguardist
-									has_ideology = ideology_anarchist
+									has_ideology = ideology:ideology_republican_leader
+									has_ideology = ideology:ideology_radical
+									has_ideology = ideology:ideology_reformer
+									has_ideology = ideology:ideology_social_democrat
+									has_ideology = ideology:ideology_communist
+									has_ideology = ideology:ideology_vanguardist
+									has_ideology = ideology:ideology_anarchist
 								}
 							}
 						}
@@ -57,7 +41,7 @@
 				}
 				change_variable = {
 					name = ah_hungary_integration_var
-					add = -1
+					add = 0.05
 				}
 			}
 			if = {  # royalists in the országgyűles
@@ -67,8 +51,8 @@
 							is_in_government = yes
 							leader = {
 								OR = {
-									has_ideology = ideology_royalist
-									has_ideology = ideology_traditionalist
+									has_ideology = ideology:ideology_royalist
+									has_ideology = ideology:ideology_traditionalist
 								}
 							}
 						}
@@ -76,7 +60,7 @@
 				}
 				change_variable = {
 					name = ah_hungary_integration_var
-					add = 3
+					add = -0.15
 				}
 			}
 			
@@ -86,15 +70,15 @@
 						is_in_government = yes
 						leader = {
 							OR = {
-								has_ideology = ideology_royalist
-								has_ideology = ideology_traditionalist
+								has_ideology = ideology:ideology_royalist
+								has_ideology = ideology:ideology_traditionalist
 							}
 						}
 					}
 				}
 				change_variable = {
 					name = ah_hungary_integration_var
-					add = 2
+					add = -0.1
 				}
 			}
 			if = {  # hungary is democratizing
@@ -111,7 +95,7 @@
 				}
 				change_variable = {
 					name = ah_hungary_integration_var
-					add = -3
+					add = 0.15
 				}
 			}
 			if = {  # Austria owns cental hungary directly
@@ -120,15 +104,17 @@
 				}
 				change_variable = {
 					name = ah_hungary_integration_var
-					add = 2
+					add = -0.1
 				}
 			}
+			je:je_dual_monarchy = { set_bar_progress = { value = c:AUS.var:ah_hungary_integration_var name = betterah_hungary_liberalisation_progress_bar } }
 		}
 	}
 
 	complete = {
-		scope:journal_entry = {
-			is_goal_complete = yes
+		owns_entire_state_region = STATE_CENTRAL_HUNGARY # DIRECT ownership
+		NOT = {
+			exists = c:HUN
 		}
 	}
 
@@ -144,15 +130,7 @@
 		}
 	}
 
-	current_value = {
-		value = root.var:ah_hungary_integration_var
-	}
-
-	goal_add_value = {
-		add = 480
-	}
-
-	progressbar = yes
+	scripted_progress_bar = betterah_hungary_liberalisation_progress_bar
 
 	weight = 100
 	should_be_pinned_by_default = yes
