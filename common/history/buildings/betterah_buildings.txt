@@ -1,4 +1,4 @@
-﻿BUILDINGS = {
+BUILDINGS = {
 	s:STATE_CROATIA={
 		region_state:HUN={
 			create_building={
