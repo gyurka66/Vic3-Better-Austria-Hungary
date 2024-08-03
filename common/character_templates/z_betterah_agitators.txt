@@ -52,6 +52,11 @@ agitator_lajos_kossuth = {
 		demagogue
 		inspirational_orator
 	}
+	on_created = {
+		set_variable = {
+			name = is_married
+		}
+	}
 	interest_group_leader_usage = { #just change from agitator_usage to interes_group_leader_usage to make him a leader and not an agitator
 		country_trigger = { #removed VotP requirement, pecause no longer an agitator
 			exists = c:HUN
